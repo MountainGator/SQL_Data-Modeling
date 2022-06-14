@@ -9,8 +9,8 @@ CREATE TABLE posts (
     id SERIAL PRIMARY KEY, 
     title TEXT, 
     body TEXT, 
-    users_id REFERENCES users (id) ON DELETE CASCADE,
-    categories_id REFERENCES categories (id) ON DELETE CASCADE, 
+    users_id INTEGER REFERENCES users (id) ON DELETE CASCADE,
+    categories_id INTEGER REFERENCES categories (id) ON DELETE CASCADE, 
     location_name TEXT,
-    regions_id REFERENCES regions (id) ON DELETE CASCADE
+    regions_id INTEGER REFERENCES regions (id) ON DELETE CASCADE
     );
