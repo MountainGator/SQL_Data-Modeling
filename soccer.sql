@@ -51,8 +51,8 @@ CREATE TABLE seasons (
 );
 
 --standings --
-SELECT team_name, COUNT(winner) AS wins, COUNT(loser) AS losses
+SELECT team_name, COUNT(winner) AS wins, COUNT(loser) AS losses, season_id AS season
     FROM teams t
     JOIN matches m ON m.winner = t.id AND m.loser = t.id
-    GROUP BY team_name
+    GROUP BY season_id
     ORDER BY COUNT(winner) desc;
